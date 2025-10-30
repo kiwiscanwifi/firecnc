@@ -3,7 +3,10 @@
  * @brief Header for SNMP agent and trap functions.
  *
  * Project: fireCNC
- * Version: 1.0.0
+ * Version: 0.0.1
+ * Author: Mark Dyer
+ * Location: Blenheim, New Zealand
+ * Contact: intelliservenz@gmail.com
  *
  * This file declares functions for initializing the SNMP agent, handling
  * custom SNMP variables, and sending SNMP traps.
@@ -12,7 +15,7 @@
 #define SNMP_TASKS_H
 
 #include "version.h"
-#include <SNMPAgent.h>
+#include <SNMP_Agent.h>
 #include <freertos/FreeRTOS.h>
 #include <freertos/task.h>
 

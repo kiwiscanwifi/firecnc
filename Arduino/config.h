@@ -46,6 +46,7 @@ struct Config {
     int SERVOY_SLAVE_ID;
     int SERVOYY_SLAVE_ID;
     int SERVOX_SLAVE_ID;
+    
     int RAIL_Y_LENGTH_MM;
     int RAIL_X_LENGTH_MM;
 

@@ -57,6 +57,7 @@ bool load_config_from_sd() {
     config.SERVOY_SLAVE_ID = doc["SERVOS"]["SERVOY_SLAVE_ID"].as<int>();
     config.SERVOYY_SLAVE_ID = doc["SERVOS"]["SERVOYY_SLAVE_ID"].as<int>();
     config.SERVOX_SLAVE_ID = doc["SERVOS"]["SERVOX_SLAVE_ID"].as<int>();
+
     config.RAIL_Y_LENGTH_MM = doc["SERVOS"]["RAIL_Y_LENGTH_MM"].as<int>();
     config.RAIL_X_LENGTH_MM = doc["SERVOS"]["RAIL_X_LENGTH_MM"].as<int>();
 
@@ -112,8 +113,10 @@ bool save_config_to_sd() {
     doc["SERVOS"]["SERVOY_SLAVE_ID"] = config.SERVOY_SLAVE_ID;
     doc["SERVOS"]["SERVOYY_SLAVE_ID"] = config.SERVOYY_SLAVE_ID;
     doc["SERVOS"]["SERVOX_SLAVE_ID"] = config.SERVOX_SLAVE_ID;
+
     doc["SERVOS"]["RAIL_Y_LENGTH_MM"] = config.RAIL_Y_LENGTH_MM;
     doc["SERVOS"]["RAIL_X_LENGTH_MM"] = config.RAIL_X_LENGTH_MM;
+
 
     doc["SNMP"]["SNMP_COMMUNITY"] = config.SNMP_COMMUNITY;
     doc["SNMP"]["SNMP_TRAP_COMMUNITY"] = config.SNMP_TRAP_COMMUNITY;
@@ -128,6 +131,7 @@ bool save_config_to_sd() {
 
     doc["SD"]["SD_MONITOR_INTERVAL"] = config.SD_MONITOR_INTERVAL;
     doc["SD"]["SD_USAGE_THRESHOLD"] = config.SD_USAGE_THRESHOLD;
+
 
     serializeJson(doc, configFile);
     configFile.close();

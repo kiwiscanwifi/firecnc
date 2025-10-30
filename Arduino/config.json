@@ -2,6 +2,12 @@
 
   "_description": "This file contains the configuration settings for the fireCNC project. It includes network credentials, LED strip parameters, servo configurations, SNMP settings, SSH access details, and system monitoring thresholds. This file should be placed on the root of the SD card.",
 
+  "PROJECT_INFO": {
+    "PROJECT_NAME": "fireCNC",
+    "VERSION": "0.0.1",
+    "LAST_UPDATED": "2025-10-30T17:30:00Z"
+  },
+
   "NETWORK": {
     "WIFI_SSID": "your_ssid",
     "WIFI_PASSWORD": "your_password",
@@ -22,9 +28,30 @@
     "CHASE_SPEED": 50,
     "FLASH_SPEED": 100,
     "IDLE_DIM_PERCENT": 50,
-    "IDLE_TIMEOUT_SECONDS": 60
+    "IDLE_TIMEOUT_SECONDS": 60,
+    "ONBOARD_LED_PIN": 38,
+    "LEDY_PIN": 13,
+    "LEDYY_PIN": 12,
+    "LEDXX_PIN": 14,
   },
   "SERVOS": {
+    "RS485_RX_PIN": 16,
+    "RS485_TX_PIN": 17,
+    "BAUDRATE": 9600,
+    "SERVO_IDS": [
+      {
+        "name": "SERVOY",
+        "id": 1
+      },
+      {
+        "name": "SERVOYY",
+        "id": 2
+      },
+      {
+        "name": "SERVOX",
+        "id": 3
+      }
+    ]
     "SERVOY_SLAVE_ID": 1,
     "SERVOYY_SLAVE_ID": 2,
     "SERVOX_SLAVE_ID": 3,
