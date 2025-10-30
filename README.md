@@ -1,3 +1,9 @@
+
+![fireCNC - Learning Project for my installation of linuxCNC](Images/fireCNC-github-banner.jpg)
+
+# fireCNC 
+Why the name.. Simple we had a kitchen fire and I wanted to rebuild a new kitchen with the precision that a CNC can offer.
+
 # fireCNC Arduino project
 
 The Arduino code is designed to be split into multiple files (.ino, .h, and .cpp) to be organized and maintainable.
