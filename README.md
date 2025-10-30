@@ -35,4 +35,4 @@ This approach adheres to standard best practices for projects of this complexity
 Configuration: The project uses a config.json file stored on an SD card, allowing easy customization of network settings, LED parameters, servo IDs, and other operational values without recompiling the code. 
 
 ## Warning
-Many mistakess errors. Work in progress, May never be completed.
+There are quite a few mistakes and errors, and this is definitely a work in progress that may never reach completion.
