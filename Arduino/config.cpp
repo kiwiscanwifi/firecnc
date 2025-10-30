@@ -34,17 +34,17 @@ bool load_config_from_sd() {
     }
     configFile.close();
 
-    config.WIFI_SSID = doc["NETWORK"]["WIFI_SSID"].as<String>();
-    config.WIFI_PASSWORD = doc["NETWORK"]["WIFI_PASSWORD"].as<String>();
-    config.STATIC_IP = doc["NETWORK"]["STATIC_IP"].as<String>();
-    config.SUBNET = doc["NETWORK"]["SUBNET"].as<String>();
-    config.GATEWAY = doc["NETWORK"]["GATEWAY"].as<String>();
-    config.DNS_SERVER = doc["NETWORK"]["DNS_SERVER"].as<String>();
-    config.NTP_SERVER = doc["NETWORK"]["NTP_SERVER"].as<String>();
+    config.WIFI_SSID        = doc["NETWORK"]["WIFI_SSID"].as<String>();
+    config.WIFI_PASSWORD    = doc["NETWORK"]["WIFI_PASSWORD"].as<String>();
+    config.STATIC_IP        = doc["NETWORK"]["STATIC_IP"].as<String>();
+    config.SUBNET           = doc["NETWORK"]["SUBNET"].as<String>();
+    config.GATEWAY          = doc["NETWORK"]["GATEWAY"].as<String>();
+    config.DNS_SERVER       = doc["NETWORK"]["DNS_SERVER"].as<String>();
+    config.NTP_SERVER       = doc["NETWORK"]["NTP_SERVER"].as<String>();
 
-    config.LEDS_Y_COUNT = doc["LEDS"]["LEDS_Y_COUNT"].as<int>();
-    config.LEDS_YY_COUNT = doc["LEDS"]["LEDS_YY_COUNT"].as<int>();
-    config.LEDS_X_COUNT = doc["LEDS"]["LEDS_X_COUNT"].as<int>();
+    config.LEDS_Y_COUNT     = doc["LEDS"]["LEDS_Y_COUNT"].as<int>();
+    config.LEDS_YY_COUNT    = doc["LEDS"]["LEDS_YY_COUNT"].as<int>();
+    config.LEDS_X_COUNT     = doc["LEDS"]["LEDS_X_COUNT"].as<int>();
     config.DEFAULT_BRIGHTNESS_Y = doc["LEDS"]["DEFAULT_BRIGHTNESS_Y"].as<int>();
     config.DEFAULT_BRIGHTNESS_YY = doc["LEDS"]["DEFAULT_BRIGHTNESS_YY"].as<int>();
     config.DEFAULT_BRIGHTNESS_X = doc["LEDS"]["DEFAULT_BRIGHTNESS_X"].as<int>();
@@ -63,17 +63,17 @@ bool load_config_from_sd() {
 
     config.SNMP_COMMUNITY = doc["SNMP"]["SNMP_COMMUNITY"].as<String>();
     config.SNMP_TRAP_COMMUNITY = doc["SNMP"]["SNMP_TRAP_COMMUNITY"].as<String>();
-    config.SNMP_TRAP_TARGET = doc["SNMP"]["SNMP_TRAP_TARGET"].as<String>();
-    config.SNMP_PORT = doc["SNMP"]["SNMP_PORT"].as<int>();
-    config.SNMP_PROTOCOL = doc["SNMP"]["SNMP_PROTOCOL"].as<String>();
+    config.SNMP_TRAP_TARGET         = doc["SNMP"]["SNMP_TRAP_TARGET"].as<String>();
+    config.SNMP_PORT                = doc["SNMP"]["SNMP_PORT"].as<int>();
+    config.SNMP_PROTOCOL            = doc["SNMP"]["SNMP_PROTOCOL"].as<String>();
 
-    config.SSH_USERNAME = doc["SSH"]["SSH_USERNAME"].as<String>();
-    config.SSH_PASSWORD = doc["SSH"]["SSH_PASSWORD"].as<String>();
+    config.SSH_USERNAME             = doc["SSH"]["SSH_USERNAME"].as<String>();
+    config.SSH_PASSWORD             = doc["SSH"]["SSH_PASSWORD"].as<String>();
 
-    config.WATCHDOG_TIMEOUT = doc["WATCHDOG"]["WATCHDOG_TIMEOUT"].as<int>();
+    config.WATCHDOG_TIMEOUT         = doc["SYSTEM"]["WATCHDOG_TIMEOUT"].as<int>();
 
-    config.SD_MONITOR_INTERVAL = doc["SD"]["SD_MONITOR_INTERVAL"].as<int>();
-    config.SD_USAGE_THRESHOLD = doc["SD"]["SD_USAGE_THRESHOLD"].as<int>();
+    config.SD_MONITOR_INTERVAL      = doc["SD"]["SD_MONITOR_INTERVAL"].as<int>();
+    config.SD_USAGE_THRESHOLD       = doc["SD"]["SD_USAGE_THRESHOLD"].as<int>();
     
     return true;
 }

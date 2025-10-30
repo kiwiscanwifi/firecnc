@@ -18,8 +18,11 @@
 #include <FS.h>
 #include <time.h>
 
-// Global ring buffer for storing recent log messages
-RingBuf<char, 2048> logBuffer;
+#include "freertos/ringbuf.h"
+#include <string.h> // For memcpy
+
+// The handle for the ring buffer
+RingbufHandle_t logBufferHandle;
 
 // Mutex to protect SD card access
 static SemaphoreHandle_t sdMutex;
@@ -71,9 +74,6 @@ void log_to_sd(const String& message) {
         localtime_r(&now, &timeinfo);
         char timestamp_str[20];
         strftime(timestamp_str, sizeof(timestamp_str), "%Y-%m-%d %H:%M:%S", &timeinfo);
-
-        // Add to ring buffer first
-        logBuffer.printf("[%s] %s\n", timestamp_str, message.c_str());
 
         // Append to file
         File logFile = SD.open(LOG_FILE_PATH, FILE_APPEND);

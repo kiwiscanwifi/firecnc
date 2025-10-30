@@ -15,58 +15,111 @@
 #include <Arduino.h>
 #include <ArduinoJson.h>
 
+// Project details for headers
+#define PROJECT_AUTHOR "Mark Dyer"
+#define PROJECT_LOCATION "Blenheim, New Zealand"
+#define PROJECT_CONTACT "intelliservenz@gmail.com"
+
 /**
  * @struct Config
  * @brief Structure to hold all application configuration settings.
  */
 struct Config {
-    // Network settings
-    String WIFI_SSID;
-    String WIFI_PASSWORD;
-    String STATIC_IP;
-    String SUBNET;
-    String GATEWAY;
-    String DNS_SERVER;
-    String NTP_SERVER;
-
-    // LED settings
-    int LEDS_Y_COUNT;
-    int LEDS_YY_COUNT;
-    int LEDS_X_COUNT;
-    int DEFAULT_BRIGHTNESS_Y;
-    int DEFAULT_BRIGHTNESS_YY;
-    int DEFAULT_BRIGHTNESS_X;
-    int AXIS_POSITION_DISPLAY_LEDS;
-    int CHASE_SPEED;
-    int FLASH_SPEED;
-    int IDLE_DIM_PERCENT;
-    int IDLE_TIMEOUT_SECONDS;
-
-    // Servo settings
-    int SERVOY_SLAVE_ID;
-    int SERVOYY_SLAVE_ID;
-    int SERVOX_SLAVE_ID;
-    
-    int RAIL_Y_LENGTH_MM;
-    int RAIL_X_LENGTH_MM;
-
-    // SNMP settings
-    String SNMP_COMMUNITY;
-    String SNMP_TRAP_COMMUNITY;
-    String SNMP_TRAP_TARGET;
-    int SNMP_PORT;
-    String SNMP_PROTOCOL;
-
-    // SSH settings
-    String SSH_USERNAME;
-    String SSH_PASSWORD;
-
-    // Watchdog setting
-    int WATCHDOG_TIMEOUT;
 
     // SD monitor setting
-    int SD_MONITOR_INTERVAL;
-    int SD_USAGE_THRESHOLD;
+    struct SD {
+        char LOG_FILE_PATH[64];
+        int SD_MONITOR_INTERVAL;
+        int SD_USAGE_THRESHOLD;
+    } SD;
+    struct PIN {
+        int LEDY_PIN;
+        int LEDYY_PIN;
+        int LEDX_PIN;
+        int RS485_TX_PIN;
+        int RS485_RX_PIN;
+        int ONBOARD_LED;
+    } PIN;
+
+    // LED settings
+    struct LEDS {
+        int LEDS_Y_COUNT;
+        int LEDS_YY_COUNT;
+        int LEDS_X_COUNT;
+
+        int FLASH_SPEED;
+        int CHASE_SPEED;
+
+        int DEFAULT_BRIGHTNESS_Y;
+        int DEFAULT_BRIGHTNESS_YY;
+        int DEFAULT_BRIGHTNESS_X;
+
+        int AXIS_POSITION_DISPLAY_LEDS;
+
+        int LED_IDLE_SERVO_DIM;
+        int LED_IDLE_SERVO_SECONDS;
+    } LEDS;
+
+    // Network settings
+    struct NETWORK {
+        bool WIFI;
+        String WIFI_SSID;
+        String WIFI_PASSWORD;
+        bool ETHERNET;
+        String STATIC_IP;
+        String SUBNET;
+        String GATEWAY;
+        String DNS_SERVER;
+        char NTP_SERVER[64];
+    } NETWORK;
+
+    // SNMP settings
+    struct SNMP {
+        bool ENABLED;
+        char SNMP_COMMUNITY[64];
+        int SNMP_PORT;
+        char SNMP_PROTOCOL[3];
+        char SNMP_TRAP_COMMUNITY[64];
+        char SNMP_TRAP_TARGET[64];
+        int TRAP_PORT;
+    } SNMP;
+
+    struct Mqtt {
+        bool ENABLED;
+    } Mqtt;
+
+    struct SYSTEM {
+        int WATCHDOG_TIMEOUT;
+    } SYSTEM;
+
+    struct TABLE {
+        int RAIL_Y_LENGTH;
+        int RAIL_X_LENGTH;
+        int RAIL_Z_LENGTH;
+    } TABLE;
+
+    // Servo settings
+    struct SERVOS {
+        int SERVOY_SLAVE_ID;
+        int SERVOYY_SLAVE_ID;
+        int SERVOX_SLAVE_ID;
+    } SERVOS;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 };
 
 extern Config config;

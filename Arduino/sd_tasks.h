@@ -12,12 +12,24 @@
 #define SD_TASKS_H
 
 #include "version.h"
-#include <RingBuf.h>
 #include <freertos/FreeRTOS.h>
 #include <freertos/task.h>
+#include <freertos/ringbuf.h>
 
-// Extern declaration for the global log ring buffer
-extern RingBuf<char, 2048> logBuffer;
+// Task handles
+extern TaskHandle_t sd_log_task_handle;
+extern TaskHandle_t sd_monitor_task_handle;
+
+// Ring buffer handle
+extern RingbufHandle_t log_ring_buffer;
+
+
+/**
+ * @brief Initializes SD card and creates SD-related tasks.
+ */
+void sd_init_tasks();
+
+
 
 /**
  * @brief Appends a message to the log file on the SD card and the ring buffer.

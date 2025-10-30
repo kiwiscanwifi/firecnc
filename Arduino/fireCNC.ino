@@ -27,7 +27,7 @@
 #include <AsyncTCP.h>
 #include <ESPAsyncWebServer.h>
 #include <libssh_esp32.h>
-#include <RingBuf.h>
+//#include <RingBuf.h>
 
 // Include project-specific files
 #include "pins.h"
@@ -116,12 +116,14 @@ void setup() {
     Wire.begin(I2C_SDA, I2C_SCL);
     if (!tca9554.begin()) {
         snmp_trap_send("TCA9554 Initialization Failed");
+        Serial.print("TCA9554 Initialization Failed");
         trigger_sd_error_visual();
         delay(5 * 60 * 1000);
         ESP.restart();
     }
-
+    Serial.print("test");
     if (!SD.begin(SD_CMD_PIN, SPI, 4000000, "/sdcard", 1)) {
+        Serial.print("SD Opening Error");
         trigger_sd_error_visual();
         delay(5 * 60 * 1000);
         ESP.restart();

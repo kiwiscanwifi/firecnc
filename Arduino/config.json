@@ -9,8 +9,10 @@
   },
 
   "NETWORK": {
-    "WIFI_SSID": "your_ssid",
-    "WIFI_PASSWORD": "your_password",
+    "ETHERNET": true,
+    "WIFI": true,
+    "WIFI_SSID": "ssid",
+    "WIFI_PASSWORD": "password",
     "STATIC_IP": "192.168.1.20",
     "SUBNET": "255.255.255.0",
     "GATEWAY": "192.168.1.1",
@@ -27,53 +29,48 @@
     "AXIS_POSITION_DISPLAY_LEDS": 5,
     "CHASE_SPEED": 50,
     "FLASH_SPEED": 100,
-    "IDLE_DIM_PERCENT": 50,
-    "IDLE_TIMEOUT_SECONDS": 60,
-    "ONBOARD_LED_PIN": 38,
-    "LEDY_PIN": 13,
-    "LEDYY_PIN": 12,
-    "LEDXX_PIN": 14,
+    "LED_IDLE_SERVO_DIM": 50,
+    "LED_IDLE_SERVO_SECONDS": 300
   },
-  "SERVOS": {
-    "RS485_RX_PIN": 16,
+  "PIN": {
+    "LEDY_PIN": 1,
+    "LEDYY_PIN": 2,
+    "LEDX_PIN": 3,
     "RS485_TX_PIN": 17,
-    "BAUDRATE": 9600,
-    "SERVO_IDS": [
-      {
-        "name": "SERVOY",
-        "id": 1
-      },
-      {
-        "name": "SERVOYY",
-        "id": 2
-      },
-      {
-        "name": "SERVOX",
-        "id": 3
-      }
-    ]
+    "RS485_RX_PIN": 18,
+    "ONBOARD_LED_PIN": 38
+  },
+  
+  "SERVOS": {
     "SERVOY_SLAVE_ID": 1,
     "SERVOYY_SLAVE_ID": 2,
     "SERVOX_SLAVE_ID": 3,
-    "RAIL_Y_LENGTH_MM": 3000,
-    "RAIL_X_LENGTH_MM": 2000
+  },
+  "TABLE": {
+    "RAIL_Y_LENGTH": 3000,
+    "RAIL_X_LENGTH": 1000,
+    "RAIL_Z_LENGTH": 100
   },
   "SNMP": {
     "SNMP_COMMUNITY": "public",
+    "SNMP_PORT": 161, 
+    "SNMP_PROTOCOL": "UDP",
     "SNMP_TRAP_COMMUNITY": "trap",
-    "SNMP_TRAP_TARGET": "192.168.1.100",
-    "SNMP_PORT": 161,
-    "SNMP_PROTOCOL": "UDP"
+    "SNMP_TRAP_TARGET": "0.0.0.0",
+    "SNMP_TRAP_PORT": 162
   },
   "SSH": {
-    "SSH_USERNAME": "admin",
-    "SSH_PASSWORD": "admin"
+    "SSH_USERNAME": "username",
+    "SSH_PASSWORD": "password"
   },
-  "WATCHDOG": {
+  "SYSTEM": {
     "WATCHDOG_TIMEOUT": 60
   },
   "SD": {
     "SD_MONITOR_INTERVAL": 300,
     "SD_USAGE_THRESHOLD": 80
+  },
+  "LOG": {
+    "LOG_FILE_PATH": "/system.log"
   }
 }
