@@ -1,0 +1,52 @@
+{
+
+  "_description": "This file contains the configuration settings for the fireCNC project. It includes network credentials, LED strip parameters, servo configurations, SNMP settings, SSH access details, and system monitoring thresholds. This file should be placed on the root of the SD card.",
+
+  "NETWORK": {
+    "WIFI_SSID": "your_ssid",
+    "WIFI_PASSWORD": "your_password",
+    "STATIC_IP": "192.168.1.20",
+    "SUBNET": "255.255.255.0",
+    "GATEWAY": "192.168.1.1",
+    "DNS_SERVER": "192.168.1.1",
+    "NTP_SERVER": "pool.ntp.org"
+  },
+  "LEDS": {
+    "LEDS_Y_COUNT": 700,
+    "LEDS_YY_COUNT": 700,
+    "LEDS_X_COUNT": 400,
+    "DEFAULT_BRIGHTNESS_Y": 200,
+    "DEFAULT_BRIGHTNESS_YY": 200,
+    "DEFAULT_BRIGHTNESS_X": 200,
+    "AXIS_POSITION_DISPLAY_LEDS": 5,
+    "CHASE_SPEED": 50,
+    "FLASH_SPEED": 100,
+    "IDLE_DIM_PERCENT": 50,
+    "IDLE_TIMEOUT_SECONDS": 60
+  },
+  "SERVOS": {
+    "SERVOY_SLAVE_ID": 1,
+    "SERVOYY_SLAVE_ID": 2,
+    "SERVOX_SLAVE_ID": 3,
+    "RAIL_Y_LENGTH_MM": 3000,
+    "RAIL_X_LENGTH_MM": 2000
+  },
+  "SNMP": {
+    "SNMP_COMMUNITY": "public",
+    "SNMP_TRAP_COMMUNITY": "trap",
+    "SNMP_TRAP_TARGET": "192.168.1.100",
+    "SNMP_PORT": 161,
+    "SNMP_PROTOCOL": "UDP"
+  },
+  "SSH": {
+    "SSH_USERNAME": "admin",
+    "SSH_PASSWORD": "admin"
+  },
+  "WATCHDOG": {
+    "WATCHDOG_TIMEOUT": 60
+  },
+  "SD": {
+    "SD_MONITOR_INTERVAL": 300,
+    "SD_USAGE_THRESHOLD": 80
+  }
+}
