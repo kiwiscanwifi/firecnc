@@ -1,9 +1,9 @@
-#fireCNC Arduino project
+# fireCNC Arduino project
 
 The Arduino code is designed to be split into multiple files (.ino, .h, and .cpp) to be organized and maintainable.
 This approach adheres to standard best practices for projects of this complexity and ensures clarity.
 
-##Project file structure
+## Project file structure
 - fireCNC is organized into several files, each responsible for a specific module, all adhering to the specified header format with author details and version number.
 - version.h: Defines the project name and version.
 - fireCNC.ino: The main Arduino file, containing setup() and loop().
@@ -19,7 +19,7 @@ This approach adheres to standard best practices for projects of this complexity
 - buzzer.h/buzzer.cpp: Utility functions for the onboard buzzer.
 
 
-##Key features 
+## Key features 
 - Multi-threading: Utilizes ESP-IDF FreeRTOS capabilities by defining and implementing multiple tasks (vNetworkTask, vLEDTask, vServoTask, etc.) to handle different project aspects concurrently.
 - Networking: Manages Ethernet and Wi-Fi connections with configurable fallback to a static IP address. Implements a robust reconnection logic. Integrates NTP sync via DHCP or a configurable server.
 - Hardware: Controls WS2815 LED strips via the FastLED library and integrates an external I/O expander (TCA9554) and an onboard buzzer.
@@ -34,4 +34,5 @@ This approach adheres to standard best practices for projects of this complexity
 
 Configuration: The project uses a config.json file stored on an SD card, allowing easy customization of network settings, LED parameters, servo IDs, and other operational values without recompiling the code. 
 
-Many mistakes/errors. Work in progress..
+## Warning
+Many mistakess errors. Work in progress, May never be completed.
