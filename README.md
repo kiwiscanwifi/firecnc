@@ -9,7 +9,13 @@ I've started gathering parts for the build, but financial constraints are slowin
 
 ## fireCNC Arduino ESP32 project
 
-Configuration: The project uses a config.json file stored on an SD card, allowing easy customization of network settings, LED parameters, servo IDs, and other operational values without recompiling the code. 
+The project utilizes a config.json file located on an SD card, which makes it simple to adjust network settings, LED configurations, servo IDs, and other operational parameters without the need to recompile the code.
+
+Configuration changes can be made through SSH using the command line interface or by accessing the web interface to adjust default settings.
+
+Connect using either Ethernet or wireless. If there's no DHCP server available, the Ethernet connection will automatically get a default static IP assigned.
+
+The use of various visual and audio effects adds an element of fun to the experience. You can easily check if the CNC is idle by asking Alexa, adjust the lighting, or even power down the system with just a few commands.
 
 ### Key features 
 - Multi-threading: Utilizes ESP-IDF FreeRTOS capabilities by defining and implementing multiple tasks (vNetworkTask, vLEDTask, vServoTask, etc.) to handle different project aspects concurrently.
