@@ -11,3 +11,5 @@ Key features of the Arduino project
 - Security: Provides SSH server functionality with configurable credentials.
 - Safety: Includes an emergency shutdown sequence triggered by a dedicated GPIO pin.
 
+
+Many mistakes/errors. Work in progress..
